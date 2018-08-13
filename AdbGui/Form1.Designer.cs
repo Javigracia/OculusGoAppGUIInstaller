@@ -38,6 +38,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,16 +64,17 @@
             // 
             // txtLogBox
             // 
-            this.txtLogBox.Location = new System.Drawing.Point(34, 247);
+            this.txtLogBox.Location = new System.Drawing.Point(34, 331);
             this.txtLogBox.Multiline = true;
             this.txtLogBox.Name = "txtLogBox";
-            this.txtLogBox.Size = new System.Drawing.Size(575, 203);
+            this.txtLogBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLogBox.Size = new System.Drawing.Size(575, 119);
             this.txtLogBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 227);
+            this.label1.Location = new System.Drawing.Point(39, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 17);
             this.label1.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(492, 140);
+            this.button3.Location = new System.Drawing.Point(492, 191);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 45);
             this.button3.TabIndex = 4;
@@ -121,17 +123,28 @@
             // pictureBox1
             // 
             this.pictureBox1.ImageLocation = "images/oculusgo.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(224, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(221, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 134);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(30, 191);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(117, 45);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "List Apps";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 524);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -161,6 +174,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

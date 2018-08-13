@@ -52,6 +52,7 @@ namespace AdbGui
             }
         }
 
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.linkLabel1.LinkVisited = true;
@@ -86,6 +87,37 @@ namespace AdbGui
             psi2.Arguments = "\""+path+"\\docs\\README.rtf\"";
             Process p2 = Process.Start(psi2);
             p2.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("ls /sdcard/Android/data", device, receiver);
+            string temp = receiver.ToString().Replace("\r\n"," ");
+
+
+            temp = ReducirEspacios(temp);
+            
+
+            Char delimiter = ' ';
+            String[] listaApps = temp.Split(delimiter);
+            txtLogBox.Text = "";
+            string salto = Environment.NewLine;
+            foreach (var item in listaApps)
+            {
+                txtLogBox.Text += item;
+                txtLogBox.Text += salto;
+            }
+        }
+
+        public static string ReducirEspacios(string cadena)
+        {
+            while (cadena.Contains("  "))
+            {
+                cadena = cadena.Replace("  ", " ");
+            }
+            return cadena;
         }
     }
 }
