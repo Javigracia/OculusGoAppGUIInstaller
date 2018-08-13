@@ -19,8 +19,22 @@ namespace AdbGui
         {
             InitializeComponent();
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
             AdbServer server = new AdbServer();
             var result = server.StartServer(@"adb\\adb.exe", restartServerIfNewer: false);
+        }
+
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            string path = Directory.GetCurrentDirectory();
+            ProcessStartInfo psi = new ProcessStartInfo(path + "\\adb\\adb.exe");
+            psi.Arguments = "kill-server";
+            psi.UseShellExecute = false;
+            psi.RedirectStandardInput = true;
+            psi.CreateNoWindow = true;
+            Process p = Process.Start(psi);
+            p.Close();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +85,7 @@ namespace AdbGui
             ProcessStartInfo psi2 = new ProcessStartInfo("Wordpad.exe");
             psi2.Arguments = "\""+path+"\\docs\\README.rtf\"";
             Process p2 = Process.Start(psi2);
+            p2.Close();
         }
     }
 }

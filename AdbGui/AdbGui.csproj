@@ -70,11 +70,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="adb\unins000.dat" />
+    <None Include="adb\unins000.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="app.config" />
-    <None Include="docs\README.rtf" />
-    <None Include="drivers\androidwinusb86.cat" />
-    <None Include="drivers\androidwinusba64.cat" />
+    <None Include="docs\README.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="drivers\androidwinusb86.cat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="drivers\androidwinusba64.cat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="drivers\source.properties" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -88,22 +96,54 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adb\adb.exe" />
-    <Content Include="adb\AdbWinApi.dll" />
-    <Content Include="adb\AdbWinUsbApi.dll" />
-    <Content Include="adb\cmd-here.exe" />
-    <Content Include="adb\Disclaimer.txt" />
-    <Content Include="adb\fastboot.exe" />
-    <Content Include="adb\unins000.exe" />
-    <Content Include="drivers\amd64\NOTICE.txt" />
-    <Content Include="drivers\amd64\WdfCoInstaller01009.dll" />
-    <Content Include="drivers\amd64\winusbcoinstaller2.dll" />
-    <Content Include="drivers\amd64\WUDFUpdate_01009.dll" />
-    <Content Include="drivers\android_winusb.inf" />
-    <Content Include="drivers\i386\NOTICE.txt" />
-    <Content Include="drivers\i386\WdfCoInstaller01009.dll" />
-    <Content Include="drivers\i386\winusbcoinstaller2.dll" />
-    <Content Include="drivers\i386\WUDFUpdate_01009.dll" />
+    <Content Include="adb\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinUsbApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\cmd-here.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\Disclaimer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\fastboot.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\unins000.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\amd64\NOTICE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\amd64\WdfCoInstaller01009.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\amd64\winusbcoinstaller2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\amd64\WUDFUpdate_01009.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\android_winusb.inf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\i386\NOTICE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\i386\WdfCoInstaller01009.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\i386\winusbcoinstaller2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="drivers\i386\WUDFUpdate_01009.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\oculusgo.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
