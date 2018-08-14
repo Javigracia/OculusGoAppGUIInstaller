@@ -18,13 +18,23 @@ Si no os sale el mensaje indicado, puede hacer falta autorizar la conexión desd
 Pulsamos en **Install Apk** y seleccionamos el juego o aplicación que queremos instalar. Se abrirá una ventana de consola en negro sin nada que mostrar, no la he ocultado para que así sepamos que se está instalando y no que se ha colgado. Una vez acaba, se cierra y muestra el mensaje de que se ha instalado correctamente.
 _Si la ventana de consola se abre y cierra muy rápido, es muy posible que ya tengamos la aplicación o juego instalada previamente y por eso diga que la ha instalado cuando realmente no lo ha hecho._ En caso de querer actualizar alguna aplicación hay que desinstalar antes de volver a instalar la nueva.
 
+* **Desinstalar aplicaciones:**
+Una vez realizada la conexión, pulsando en **List Apps** se mostrará en el Log y el comboBox las aplicaciones instaladas, escondiendo las que no se deban tocar por seguridad. Seleccionando en el comboBox la aplicación y pulsando el botón de **Uninstall App** se eliminará la aplicación de nuestras Oculus Go.
+
 * **Ejecutar lo instalado:**
 Para probar lo que acabamos de instalar, tenemos que ir a **Library** en nuestras Oculus Go en la barra inferior de navegación, **Unknown Sources** que aparece tras haber activado el modo desarrollador en la aplicación de Oculus en el teléfono.
 Buscamos la aplicación o juego y la ejecutamos.
 ---
 Versiones:
-V. 001:
+V.0.0.1:
 Primera versión que conecta el Pc con las Oculus Go e instala la aplicación o juego.
+V.0.0.2:
+Fix para cerrar el servicio adb que se quedaba abierto al salir de la aplicación.
+Nuevo instalador de aplicación y desinstalador para windows.
+V.0.0.3:
+Añadido botón para listar las aplicaciones de terceros instaladas por adb.
+V.0.0.4:
+Añadido comboBox para mostrar las aplicaciones de terceros filtrando las que sean de sistema, oculus o samsung (se siguen mostrando como referencia en el Log inferior). Al seleccionar la aplicación en el comboBox y pulsar el nuevo botón de Unistall se desinstala la aplicación. 
 
 ---
 **TO-DO:**
@@ -50,13 +60,24 @@ If the message does not appear, you may need to authorize the connection from yo
 Click on **Install Apk** and select the game or application you want to install. A black console window will open with nothing to show, I have not hidden it so that we know it is being installed and not that it has been hung. Once it is finished, it closes and displays the message that it has been successfully installed.
 If the console window opens and closes very quickly, it is very possible that we already have the application or game installed previously and that's why it says that you have installed it when you really haven't. In case you want to update an application you have to uninstall it before reinstalling the new one.
 
+* **Uninstall applications:**
+Once the connection has been made, clicking on **List Apps** will show the installed applications in the Log and comboBox, hiding those that should not be touched for security reasons. Selecting the application in the comboBox and pressing the **Uninstall App** button will remove the application from our Oculus Go.
+
 * **Run as installed:**
 To test what we have just installed, we have to go to **Library** on our Oculus Go in the lower navigation bar, **Unknown Sources** that appears after having activated the developer mode in the Oculus application on the phone.
 We search for the application or game and run it.
 ---
 Versions:
-V. 001:
+V.0.0.1:
 First version that connects the PC with the Oculus Go and installs the application or game.
+V.0.0.2:
+Fix to close the adb service that was open when you left the application.
+New application installer and uninstaller for windows.
+V.0.0.3:
+Added button to list third-party applications installed by adb.
+V.0.0.4:
+Added comboBox to show the third party applications filtering the system, oculus or samsung applications (they are still shown as reference in the lower Log). Selecting the application in the comboBox and pressing the new Unistall button uninstalls the application. 
+
 
 ---
 **TO-DO:**
