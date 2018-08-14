@@ -38,7 +38,7 @@ Añadido comboBox para mostrar las aplicaciones de terceros filtrando las que se
 
 ---
 **TO-DO:**
-La próxima versión intentaré añadir la opción de desinstalar las aplicaciones y juegos, pero el nombre de las aplicaciones es distinta a como la vemos en el explorador, es como se muestra en el menú de **Unknoun Sources** por lo que no se si poner una caja de texto para que se meta a mano el nombre de la aplicación o juego a desinstalar o investigar como listar las aplicaciones y poder eliminarla con un simple click y confirmación.
+Crear enlaces a los paquetes com.company.app para que se muestren en el comboBox con nombre más fáciles de leer, pero no siguen una norma, hay aplicaciones que tienen cuatro partes en el nombre, otras solo dos. Investigaré sobre ello.
 
 ---
 README English:
@@ -81,4 +81,4 @@ Added comboBox to show the third party applications filtering the system, oculus
 
 ---
 **TO-DO:**
-The next version will try to add the option to uninstall the applications and games, but the name of the applications is different from the way we see it in the browser, it is as shown in the menu of **Unknoun Sources** so I do not know whether to put a text box to manually put the name of the application or game to uninstall or investigate how to list the applications and remove it with a simple click and confirmation.
+Create links to the packages com.company.app so that they are shown in the comboBox with name easier to read, but they do not follow a standard, there are applications that have four parts in the name, others only two. I'll look into it.
