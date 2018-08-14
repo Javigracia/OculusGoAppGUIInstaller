@@ -26,14 +26,14 @@ Para probar lo que acabamos de instalar, tenemos que ir a **Library** en nuestra
 Buscamos la aplicación o juego y la ejecutamos.
 ---
 Versiones:
-V.0.0.1:
+- V.0.0.1:
 Primera versión que conecta el Pc con las Oculus Go e instala la aplicación o juego.
-V.0.0.2:
+- V.0.0.2:
 Fix para cerrar el servicio adb que se quedaba abierto al salir de la aplicación.
 Nuevo instalador de aplicación y desinstalador para windows.
-V.0.0.3:
+- V.0.0.3:
 Añadido botón para listar las aplicaciones de terceros instaladas por adb.
-V.0.0.4:
+- V.0.0.4:
 Añadido comboBox para mostrar las aplicaciones de terceros filtrando las que sean de sistema, oculus o samsung (se siguen mostrando como referencia en el Log inferior). Al seleccionar la aplicación en el comboBox y pulsar el nuevo botón de Unistall se desinstala la aplicación. 
 
 ---
@@ -68,14 +68,14 @@ To test what we have just installed, we have to go to **Library** on our Oculus 
 We search for the application or game and run it.
 ---
 Versions:
-V.0.0.1:
+- V.0.0.1:
 First version that connects the PC with the Oculus Go and installs the application or game.
-V.0.0.2:
+- V.0.0.2:
 Fix to close the adb service that was open when you left the application.
 New application installer and uninstaller for windows.
-V.0.0.3:
+- V.0.0.3:
 Added button to list third-party applications installed by adb.
-V.0.0.4:
+- V.0.0.4:
 Added comboBox to show the third party applications filtering the system, oculus or samsung applications (they are still shown as reference in the lower Log). Selecting the application in the comboBox and pressing the new Unistall button uninstalls the application. 
 
 
