@@ -165,5 +165,38 @@ namespace AdbGui
                 txtLogBox.Text = "Operation Cancelled!!";
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 1024", device, receiver);
+            txtLogBox.Clear();
+            txtLogBox.Text = "Width resolution changed to 1024.";
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 1024", device, receiver);
+            txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 1024.";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 1536", device, receiver);
+            txtLogBox.Clear();
+            txtLogBox.Text = "Width resolution changed to 1536.";
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 1536", device, receiver);
+            txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 1536.";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 2048", device, receiver);
+            txtLogBox.Clear();
+            txtLogBox.Text = "Width resolution changed to 2048.";
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 2048", device, receiver);
+            txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 2048.";
+        }
     }
 }
