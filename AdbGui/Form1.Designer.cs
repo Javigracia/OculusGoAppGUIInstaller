@@ -46,7 +46,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -71,17 +76,17 @@
             // 
             // txtLogBox
             // 
-            this.txtLogBox.Location = new System.Drawing.Point(30, 429);
+            this.txtLogBox.Location = new System.Drawing.Point(30, 503);
             this.txtLogBox.Multiline = true;
             this.txtLogBox.Name = "txtLogBox";
             this.txtLogBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogBox.Size = new System.Drawing.Size(602, 119);
+            this.txtLogBox.Size = new System.Drawing.Size(602, 89);
             this.txtLogBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 409);
+            this.label1.Location = new System.Drawing.Point(33, 483);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 17);
             this.label1.TabIndex = 3;
@@ -89,7 +94,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(519, 89);
+            this.button3.Location = new System.Drawing.Point(30, 355);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 45);
             this.button3.TabIndex = 4;
@@ -100,7 +105,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(504, 551);
+            this.linkLabel1.Location = new System.Drawing.Point(500, 595);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(132, 17);
             this.linkLabel1.TabIndex = 5;
@@ -121,11 +126,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 551);
+            this.label3.Location = new System.Drawing.Point(27, 595);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "V.0.0.5 beta";
+            this.label3.Text = "V.0.0.6 beta";
             // 
             // pictureBox1
             // 
@@ -176,7 +181,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(519, 253);
+            this.button6.Location = new System.Drawing.Point(515, 89);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(117, 45);
             this.button6.TabIndex = 13;
@@ -186,7 +191,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(519, 304);
+            this.button7.Location = new System.Drawing.Point(515, 140);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 45);
             this.button7.TabIndex = 14;
@@ -196,7 +201,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(519, 355);
+            this.button8.Location = new System.Drawing.Point(515, 191);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 45);
             this.button8.TabIndex = 15;
@@ -207,17 +212,61 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(516, 233);
+            this.label5.Location = new System.Drawing.Point(516, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Resolution:";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(15, 74);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(117, 45);
+            this.button10.TabIndex = 18;
+            this.button10.Text = "Extra high 2560";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(15, 23);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(117, 45);
+            this.button11.TabIndex = 19;
+            this.button11.Text = "Very high 2048";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.button11);
+            this.groupBox1.Controls.Add(this.button10);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.groupBox1.Location = new System.Drawing.Point(498, 274);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(147, 187);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cpu+gpu hack";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(17, 125);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(117, 45);
+            this.button9.TabIndex = 21;
+            this.button9.Text = "Ultra high 3072";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 591);
+            this.ClientSize = new System.Drawing.Size(666, 633);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -238,6 +287,7 @@
             this.Name = "Form1";
             this.Text = "Oculus Go Application Tools";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +313,10 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button9;
     }
 }
 

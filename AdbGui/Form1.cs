@@ -198,5 +198,77 @@ namespace AdbGui
             AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 2048", device, receiver);
             txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 2048.";
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 4. Refrigeration is required.", "Do you want to continue?",
+                MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                var device = AdbClient.Instance.GetDevices().First();
+                var receiver = new ConsoleOutputReceiver();
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 2560", device, receiver);
+                txtLogBox.Clear();
+                txtLogBox.Text = "Width resolution changed to 2560.";
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 2560", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.gpuLevel 4", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.cpuLevel 4", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.adaclocks.force 0", device, receiver);
+                txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 2560.\r\nThe cpu and gpu is upgrade to level 4.\r\nAll the changes will reset if you restart yout Oculus Go.";
+            }
+            else
+            {
+                txtLogBox.Clear();
+                txtLogBox.Text = "Operation Cancelled!!";
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 2. Refrigeration is recommended.", "Do you want to continue?",
+                MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                var device = AdbClient.Instance.GetDevices().First();
+                var receiver = new ConsoleOutputReceiver();
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 2048", device, receiver);
+                txtLogBox.Clear();
+                txtLogBox.Text = "Width resolution changed to 2048.";
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 2048", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.gpuLevel 2", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.cpuLevel 2", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.adaclocks.force 0", device, receiver);
+                txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 2048.\r\nThe cpu and gpu is upgrade to level 2.\r\nAll the changes will reset if you restart yout Oculus Go.";
+            }
+            else
+            {
+                txtLogBox.Clear();
+                txtLogBox.Text = "Operation Cancelled!!";
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 4 and the highest resolution. Only use it if you have EXTRA REFRIGERATION or your Oculus Go will be restarted.", "Do you want to continue?",
+                MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                var device = AdbClient.Instance.GetDevices().First();
+                var receiver = new ConsoleOutputReceiver();
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureWidth 3072", device, receiver);
+                txtLogBox.Clear();
+                txtLogBox.Text = "Width resolution changed to 3072.";
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.textureHeight 3072", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.gpuLevel 4", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.cpuLevel 4", device, receiver);
+                AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.adaclocks.force 0", device, receiver);
+                txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 3072.\r\nThe cpu and gpu is upgrade to level 4.\r\nAll the changes will reset if you restart yout Oculus Go.";
+            }
+            else
+            {
+                txtLogBox.Clear();
+                txtLogBox.Text = "Operation Cancelled!!";
+            }
+        }
     }
 }
