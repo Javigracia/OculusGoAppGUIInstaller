@@ -37,11 +37,14 @@ Añadido botón para listar las aplicaciones de terceros instaladas por adb.
 Añadido comboBox para mostrar las aplicaciones de terceros filtrando las que sean de sistema, oculus o samsung (se siguen mostrando como referencia en el Log inferior). Al seleccionar la aplicación en el comboBox y pulsar el nuevo botón de Unistall se desinstala la aplicación.
 - v0.0.5:
 Añadidos 3 botones para cambiar la resolución. normal 1024 - high 1536 - very high 2048.
-(No añadi perfiles superiores porque se recomienda subir la cpu y gpu y es necesario sistema de refrigeración, del que no dispongo para probar. Solo he puesto los que son seguros)
+(No añadi perfiles superiores porque se recomienda subir la cpu y gpu y es necesario sistema de refrigeración, del que no dispongo para probar. Solo he puesto los que son seguros).
+- v0.0.6:
+Añadidos 3 botones más en un grupo color rojo para subir la resolución y a la vez la gpu y la cpu para evitar lag en los juegos y aplicaciones. Ojo!!! Es recomendado o incluso necesario tener montado el kit de refrigeración extra o las gafas se calentarán y se reiniciarán.
 
 ---
 **TO-DO:**
 Crear enlaces a los paquetes com.company.app para que se muestren en el comboBox con nombre más fáciles de leer, pero no siguen una norma, hay aplicaciones que tienen cuatro partes en el nombre, otras solo dos. Investigaré sobre ello.
+Añadir un botón para lanzar ALVR y poder cargar juegos de PC VR en las Oculus Go.
 
 ---
 README English:
@@ -82,9 +85,12 @@ Added button to list third-party applications installed by adb.
 Added comboBox to show the third party applications filtering the system, oculus or samsung applications (they are still shown as reference in the lower Log). Selecting the application in the comboBox and pressing the new Unistall button uninstalls the application.
 - V0.0.5:
 Added 3 buttons to change the resolution. normal 1024 - high 1536 - very high 2048.
-(I didn't add higher profiles because it is recommended to raise the cpu and gpu and it is necessary to have a cooling system, which I don't have for testing. I've only put out the ones that are safe)
+(I didn't add higher profiles because it is recommended to raise the cpu and gpu and it is necessary to have a cooling system, which I don't have for testing. I've only put out the ones that are safe).
+- v0.0.6:
+Added 3 more buttons in a red group to increase the resolution and at the same time the gpu and the cpu to avoid lag in the games and applications. Watch out!!!!! It is recommended or even necessary to have the extra cooling kit mounted or the glasses will heat up and restart.
 
 
 ---
 **TO-DO:**
 Create links to the packages com.company.app so that they are shown in the comboBox with name easier to read, but they do not follow a standard, there are applications that have four parts in the name, others only two. I'll look into it.
+Add a button to connect with ALVR for play Pc VR games in Oculus Go.
