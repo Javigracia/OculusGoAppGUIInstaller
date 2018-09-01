@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtLogBox = new System.Windows.Forms.TextBox();
@@ -50,6 +51,9 @@
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +84,7 @@
             this.txtLogBox.Multiline = true;
             this.txtLogBox.Name = "txtLogBox";
             this.txtLogBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogBox.Size = new System.Drawing.Size(602, 89);
+            this.txtLogBox.Size = new System.Drawing.Size(602, 217);
             this.txtLogBox.TabIndex = 2;
             // 
             // label1
@@ -94,7 +98,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(30, 355);
+            this.button3.Location = new System.Drawing.Point(30, 399);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 45);
             this.button3.TabIndex = 4;
@@ -105,7 +109,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(500, 595);
+            this.linkLabel1.Location = new System.Drawing.Point(500, 723);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(132, 17);
             this.linkLabel1.TabIndex = 5;
@@ -126,11 +130,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 595);
+            this.label3.Location = new System.Drawing.Point(27, 723);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "V.0.0.6 beta";
+            this.label3.Text = "V.0.0.7 beta";
             // 
             // pictureBox1
             // 
@@ -143,7 +147,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(30, 253);
+            this.button4.Location = new System.Drawing.Point(30, 246);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 45);
             this.button4.TabIndex = 9;
@@ -162,7 +166,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(30, 304);
+            this.button5.Location = new System.Drawing.Point(30, 297);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 45);
             this.button5.TabIndex = 11;
@@ -261,11 +265,43 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(231, 348);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(117, 45);
+            this.button12.TabIndex = 21;
+            this.button12.Text = "Fix On";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(231, 399);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(117, 45);
+            this.button13.TabIndex = 22;
+            this.button13.Text = "Fix Off";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(228, 325);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(145, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Chromatic Aberration:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 633);
+            this.ClientSize = new System.Drawing.Size(658, 758);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button8);
@@ -284,6 +320,10 @@
             this.Controls.Add(this.txtLogBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(676, 805);
+            this.MinimumSize = new System.Drawing.Size(676, 805);
             this.Name = "Form1";
             this.Text = "Oculus Go Application Tools";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -317,6 +357,9 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label6;
     }
 }
 

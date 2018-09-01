@@ -270,5 +270,23 @@ namespace AdbGui
                 txtLogBox.Text = "Operation Cancelled!!";
             }
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.forceChroma 1", device, receiver);
+            txtLogBox.Clear();
+            txtLogBox.Text = "Chromatic aberration fix ON.";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.forceChroma 0", device, receiver);
+            txtLogBox.Clear();
+            txtLogBox.Text = "Chromatic aberration fix OFF.";
+        }
     }
 }
