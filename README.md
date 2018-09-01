@@ -40,11 +40,16 @@ Añadidos 3 botones para cambiar la resolución. normal 1024 - high 1536 - very 
 (No añadi perfiles superiores porque se recomienda subir la cpu y gpu y es necesario sistema de refrigeración, del que no dispongo para probar. Solo he puesto los que son seguros).
 - v0.0.6:
 Añadidos 3 botones más en un grupo color rojo para subir la resolución y a la vez la gpu y la cpu para evitar lag en los juegos y aplicaciones. Ojo!!! Es recomendado o incluso necesario tener montado el kit de refrigeración extra o las gafas se calentarán y se reiniciarán.
+-V0.0.7:
+Añadidos 2 botones para activar y desactivar un fix en la aberración cromática. La forma más sencilla de comprobarlo es en el propio menú de oculus home, mirando al frente las letras de abajo se ven con un borde rojo y verde. Con el fix activado esa aberración se elimina. Tmabién se ha añadido icono en la ventana de la aplicación y se ha fijado el tamaño de la ventana para que no se deformara.
+
 
 ---
 **TO-DO:**
 Crear enlaces a los paquetes com.company.app para que se muestren en el comboBox con nombre más fáciles de leer, pero no siguen una norma, hay aplicaciones que tienen cuatro partes en el nombre, otras solo dos. Investigaré sobre ello.
 Añadir un botón para lanzar ALVR y poder cargar juegos de PC VR en las Oculus Go.
+Me comentan que el filtro de aplicaciones no está funcionando como debe. En breve lo arreglaré para que oculte las que no se deben mostrar como debería hacer desde el principio.
+
 
 ---
 README English:
@@ -88,9 +93,12 @@ Added 3 buttons to change the resolution. normal 1024 - high 1536 - very high 20
 (I didn't add higher profiles because it is recommended to raise the cpu and gpu and it is necessary to have a cooling system, which I don't have for testing. I've only put out the ones that are safe).
 - v0.0.6:
 Added 3 more buttons in a red group to increase the resolution and at the same time the gpu and the cpu to avoid lag in the games and applications. Watch out!!!!! It is recommended or even necessary to have the extra cooling kit mounted or the glasses will heat up and restart.
+-V0.0.7:
+Added 2 buttons to enable and disable a fix on chromatic aberration. The easiest way to check this is in the oculus home menu itself, looking at the front the letters below are shown with a red and green border. With the fix activated, this aberration is eliminated. Icon has also been added to the application window and the size of the window has been set so that it does not deform.
 
 
 ---
 **TO-DO:**
 Create links to the packages com.company.app so that they are shown in the comboBox with name easier to read, but they do not follow a standard, there are applications that have four parts in the name, others only two. I'll look into it.
 Add a button to connect with ALVR for play Pc VR games in Oculus Go.
+They tell me that the application filter is not working as it should. I will soon arrange for you to hide those that should not be shown as they should be from the outset.
