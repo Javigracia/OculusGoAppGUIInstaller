@@ -15,8 +15,9 @@ namespace AdbGui
 {
     public partial class Form1 : Form
     {
-        public  string appSelected = "";
-        public String[] listaAppsProtected = {"com.oculus.systemactivities", "com.oculus.vrshell", "com.oculusvr.dabmobile", "samsung", "google", "android"};
+        public string appSelected = "";
+        public string saveSelected = "";
+        public String[] listaAppsProtected = {"com.oculus.systemactivities", "com.oculus.vrshell", "com.oculusvr.dabmobile", "samsung", "google", "android" };
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace AdbGui
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
             AdbServer server = new AdbServer();
             var result = server.StartServer(@"adb\\adb.exe", restartServerIfNewer: false);
-            
+
         }
 
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
@@ -42,14 +43,14 @@ namespace AdbGui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             var devices = AdbClient.Instance.GetDevices();
 
-            foreach(var device in devices)
+            foreach (var device in devices)
             {
                 txtLogBox.Text = device.Model + " " + device.Serial;
             }
-            if(txtLogBox.Text == "null" || txtLogBox.Text == "")
+            if (txtLogBox.Text == "null" || txtLogBox.Text == "")
             {
                 txtLogBox.Text = "Device not connected or detected.";
             }
@@ -70,7 +71,7 @@ namespace AdbGui
                 string path = Directory.GetCurrentDirectory();
                 txtLogBox.Text = openFileDialog1.FileName;
                 ProcessStartInfo psi = new ProcessStartInfo(path + "\\adb\\adb.exe");
-                psi.Arguments = "install "+ "\"" + txtLogBox.Text + "\"";
+                psi.Arguments = "install " + "\"" + txtLogBox.Text + "\"";
                 psi.UseShellExecute = false;
                 psi.RedirectStandardInput = true;
 
@@ -87,7 +88,7 @@ namespace AdbGui
         {
             string path = Directory.GetCurrentDirectory();
             ProcessStartInfo psi2 = new ProcessStartInfo("Wordpad.exe");
-            psi2.Arguments = "\""+path+"\\docs\\README.rtf\"";
+            psi2.Arguments = "\"" + path + "\\docs\\README.rtf\"";
             Process p2 = Process.Start(psi2);
             p2.Close();
         }
@@ -104,27 +105,11 @@ namespace AdbGui
             Char delimiter = '-';
             String[] listaApps = temp.Split(delimiter);
             comboBox1.Items.Clear();
-            foreach (var elements in listaApps)
+            var res = listaApps.Where(s => !listaAppsProtected.Any(ignored => s.Contains(ignored))).ToList();
+            foreach (var item in res)
             {
-                if (!listaAppsProtected.Contains(elements))
-                comboBox1.Items.Add(elements);
+                comboBox1.Items.Add(item);
             }
-
-            /* 
-             * Old method to order the apps
-             */
-            //AdbClient.Instance.ExecuteRemoteCommand("ls /sdcard/Android/data", device, receiver);
-            //string temp = receiver.ToString().Replace("\r\n"," ");
-            //temp = ReducirEspacios(temp);
-            //Char delimiter = ' ';
-            //String[] listaApps = temp.Split(delimiter);
-            //txtLogBox.Text = "";
-            //string salto = Environment.NewLine;
-            //foreach (var item in listaApps)
-            //{
-            //    txtLogBox.Text += item;
-            //    txtLogBox.Text += salto;
-            //}
         }
 
         //public static string ReducirEspacios(string cadena)
@@ -144,7 +129,7 @@ namespace AdbGui
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to Uninstall "+appSelected+"?", "Confirm to Uninstall it",
+            var confirmResult = MessageBox.Show("Are you sure to Uninstall " + appSelected + "?", "Confirm to Uninstall it",
                 MessageBoxButtons.OKCancel);
             if (confirmResult == DialogResult.OK)
             {
@@ -287,6 +272,58 @@ namespace AdbGui
             AdbClient.Instance.ExecuteRemoteCommand("setprop debug.oculus.forceChroma 0", device, receiver);
             txtLogBox.Clear();
             txtLogBox.Text = "Chromatic aberration fix OFF.";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            var device = AdbClient.Instance.GetDevices().First();
+            var receiver = new ConsoleOutputReceiver();
+            AdbClient.Instance.ExecuteRemoteCommand("ls -x1 /sdcard/Android/data", device, receiver);
+            txtLogBox.Text =
+                "Ocultadas apps en el comboBox que puedan proceder de android(sistema), samsung o google para evitar borrados por error. En el Log se pueden ver todas las apps sin filtrar\r\n-----------\r\nHidden apps in the comboBox that can come from android(system), samsung or google to avoid being deleted by mistake. In the Log you can see all the unfiltered apps\r\n-----------\r\n";
+            txtLogBox.Text = txtLogBox.Text + receiver;
+            string temp = receiver.ToString().Replace("\r\n", "-");
+            Char delimiter = '-';
+            String[] listaSaves = temp.Split(delimiter);
+            comboBox2.Items.Clear();
+            var res = listaSaves.Where(s => !listaAppsProtected.Any(ignored => s.Contains(ignored))).ToList();
+            foreach (var item in res)
+            {
+                comboBox2.Items.Add(item);
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            saveSelected = comboBox2.SelectedItem.ToString();
+            txtLogBox.Clear();
+            txtLogBox.Text = saveSelected;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            string savePath = Directory.GetCurrentDirectory();
+            var confirmResult = MessageBox.Show("You will backup your save of " + saveSelected + " to saveBackups directory in this App directory.", "Confirm it?",
+                MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                
+                txtLogBox.Text = openFileDialog1.FileName;
+                ProcessStartInfo psi = new ProcessStartInfo(savePath + "\\adb\\adb.exe");
+                string argumentPath = "/sdcard/Android/data/" + saveSelected + "/ ";
+                psi.Arguments = "pull "+argumentPath +"saveBackups/";
+                psi.UseShellExecute = false;
+                psi.RedirectStandardInput = true;
+                Process p = Process.Start(psi);
+                txtLogBox.Clear();
+                txtLogBox.Text = saveSelected + "backup done";
+                p.Close();
+            }
+            else
+            {
+                txtLogBox.Clear();
+                txtLogBox.Text = "Operation Cancelled!!";
+            }
         }
     }
 }
