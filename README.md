@@ -4,6 +4,8 @@ English version of this README below
 **Lo primero, decir que esto es solo una aplicación gráfica para facilitar la conexión e instalación de aplicaciones y juegos en las Oculus Go para aquellos que no sepan usar la consola cmd o les de pereza. En todo caso no me hago responsable de los fallos que pueda producir no solo por la aplicación en sí, sino por el echo de estar instalando cosas de origen distinto a la tienda oficial.**
 
 ## Pasos:
+* **Darse de alta como desarrollador en el Dashboard de Oculus:**
+Hay que acceder a https://dashboard.oculus.com/organizations/create/ y poner la misma cuenta que tengamos en nuestras Oculus Go. Un avez hecho esto, sincronizamos el movil con las Oculus Go y te reconocerá como Desarrollador.
 * **Activar el modo desarrollador en las Oculus Go:**
 Desde la aplicación de Oculus en el teléfono, una vez emparejadas las gafas, vais a la ruta y hacéis click en  **More Settings>Developer Mode** y activamos **Developer Mode** On.
 * **Instalación de los drivers de Oculus Go:**
@@ -57,6 +59,8 @@ README English:
 First of all, this is just a graphical application to facilitate the connection and installation of applications and games in the Oculus Go for those who do not know how to use the cmd console or lazy them. In any case, I am not responsible for any failures that may occur not only due to the application itself, but also due to the fact that I am installing things from other sources than the official shop.
 
 ## Steps ##
+* **Register as a developer on the Dashboard of Oculus:**
+You have to go to https://dashboard.oculus.com/organizations/create/ and put the same account that we have in our Oculus Go. Once this is done, we synchronize the mobile with the Oculus Go and will recognize you as a Developer.
 * **Enable developer mode on the Oculus Go:**
 From the Oculus application on your phone, once you have paired the glasses, go to the route and click on **More Settings>Developer Mode** and activate **Developer Mode** On.
 * **Oculus Go driver installation:**
