@@ -5,7 +5,7 @@ English version of this README below
 
 ## Pasos:
 * **Darse de alta como desarrollador en el Dashboard de Oculus:**
-Hay que acceder a https://dashboard.oculus.com/organizations/create/ y poner la misma cuenta que tengamos en nuestras Oculus Go. Un avez hecho esto, sincronizamos el movil con las Oculus Go y te reconocerá como Desarrollador.
+Hay que acceder a https://dashboard.oculus.com/organizations/create/ y poner la misma cuenta que tengamos en nuestras Oculus Go. Una vez hecho esto, sincronizamos el móvil con las Oculus Go y te reconocerá como Desarrollador.
 * **Activar el modo desarrollador en las Oculus Go:**
 Desde la aplicación de Oculus en el teléfono, una vez emparejadas las gafas, vais a la ruta y hacéis click en  **More Settings>Developer Mode** y activamos **Developer Mode** On.
 * **Instalación de los drivers de Oculus Go:**
