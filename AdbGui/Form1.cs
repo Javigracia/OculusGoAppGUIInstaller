@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using SharpAdbClient;
-using SharpAdbClient.DeviceCommands;
 
 namespace AdbGui
 {
@@ -21,7 +16,7 @@ namespace AdbGui
         public Form1()
         {
             InitializeComponent();
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.connect_button.Click += new System.EventHandler(this.Connect_button_Click);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
             AdbServer server = new AdbServer();
             var result = server.StartServer(@"adb\\adb.exe", restartServerIfNewer: false);
@@ -41,7 +36,7 @@ namespace AdbGui
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Connect_button_Click(object sender, EventArgs e)
         {
 
             var devices = AdbClient.Instance.GetDevices();
@@ -57,13 +52,13 @@ namespace AdbGui
         }
 
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void TwitterLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.linkLabel1.LinkVisited = true;
+            this.twitterLabel.LinkVisited = true;
             Process.Start("https://twitter.com/javigracia");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Install_button_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -84,7 +79,7 @@ namespace AdbGui
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Readme_button_Click(object sender, EventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
             ProcessStartInfo psi2 = new ProcessStartInfo("Wordpad.exe");
@@ -93,7 +88,7 @@ namespace AdbGui
             p2.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void AppsList_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -104,11 +99,11 @@ namespace AdbGui
             string temp = receiver.ToString().Replace("\r\n", "-");
             Char delimiter = '-';
             String[] listaApps = temp.Split(delimiter);
-            comboBox1.Items.Clear();
+            appsList.Items.Clear();
             var res = listaApps.Where(s => !listaAppsProtected.Any(ignored => s.Contains(ignored))).ToList();
             foreach (var item in res)
             {
-                comboBox1.Items.Add(item);
+                appsList.Items.Add(item);
             }
         }
 
@@ -120,14 +115,14 @@ namespace AdbGui
         //    }
         //    return cadena;
         //}
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void AppsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            appSelected = comboBox1.SelectedItem.ToString();
+            appSelected = appsList.SelectedItem.ToString();
             txtLogBox.Clear();
             txtLogBox.Text = appSelected;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Uninstall_button_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Are you sure to Uninstall " + appSelected + "?", "Confirm to Uninstall it",
                 MessageBoxButtons.OKCancel);
@@ -151,7 +146,7 @@ namespace AdbGui
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Resolution1024_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -162,7 +157,7 @@ namespace AdbGui
             txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 1024.";
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Resolution1536_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -173,7 +168,7 @@ namespace AdbGui
             txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 1536.";
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void Resolution2048_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -184,7 +179,7 @@ namespace AdbGui
             txtLogBox.Text = txtLogBox.Text + "\r\nHeight resolution changed to 2048.";
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Resolution2560_button_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 4. Refrigeration is required.", "Do you want to continue?",
                 MessageBoxButtons.OKCancel);
@@ -208,7 +203,7 @@ namespace AdbGui
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void Resolution2048Plus_button_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 2. Refrigeration is recommended.", "Do you want to continue?",
                 MessageBoxButtons.OKCancel);
@@ -232,7 +227,7 @@ namespace AdbGui
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Resolution3072Plus_button_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("You are going to raise the cpu and gpu to lvl 4 and the highest resolution. Only use it if you have EXTRA REFRIGERATION or your Oculus Go will be restarted.", "Do you want to continue?",
                 MessageBoxButtons.OKCancel);
@@ -256,7 +251,7 @@ namespace AdbGui
             }
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void ChromaticFixOn_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -265,7 +260,7 @@ namespace AdbGui
             txtLogBox.Text = "Chromatic aberration fix ON.";
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void ChromaticFixOff_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -274,7 +269,7 @@ namespace AdbGui
             txtLogBox.Text = "Chromatic aberration fix OFF.";
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void SavesList_button_Click(object sender, EventArgs e)
         {
             var device = AdbClient.Instance.GetDevices().First();
             var receiver = new ConsoleOutputReceiver();
@@ -285,22 +280,22 @@ namespace AdbGui
             string temp = receiver.ToString().Replace("\r\n", "-");
             Char delimiter = '-';
             String[] listaSaves = temp.Split(delimiter);
-            comboBox2.Items.Clear();
+            saveDataList.Items.Clear();
             var res = listaSaves.Where(s => !listaAppsProtected.Any(ignored => s.Contains(ignored))).ToList();
             foreach (var item in res)
             {
-                comboBox2.Items.Add(item);
+                saveDataList.Items.Add(item);
             }
         }
 
-        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void SaveDataList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            saveSelected = comboBox2.SelectedItem.ToString();
+            saveSelected = saveDataList.SelectedItem.ToString();
             txtLogBox.Clear();
             txtLogBox.Text = saveSelected;
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void SaveBackup_button_Click(object sender, EventArgs e)
         {
             string savePath = Directory.GetCurrentDirectory();
             var confirmResult = MessageBox.Show("You will backup your save of " + saveSelected + " to saveBackups directory in this App directory.", "Confirm it?",
@@ -316,13 +311,37 @@ namespace AdbGui
                 psi.RedirectStandardInput = true;
                 Process p = Process.Start(psi);
                 txtLogBox.Clear();
-                txtLogBox.Text = saveSelected + "backup done";
+                txtLogBox.Text = saveSelected + " backup done";
                 p.Close();
             }
             else
             {
                 txtLogBox.Clear();
                 txtLogBox.Text = "Operation Cancelled!!";
+            }
+        }
+
+        private void SaveRestore_button_Click(object sender, EventArgs e)
+        {
+            using(var fbd = new FolderBrowserDialog())
+            {
+                string path = Directory.GetCurrentDirectory();
+                fbd.SelectedPath = path + "\\saveBackups";
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    //txtLogBox.Clear();
+                    //txtLogBox.Text = fbd.SelectedPath;
+                    ProcessStartInfo psi = new ProcessStartInfo(path + "\\adb\\adb.exe");
+                    psi.Arguments = "push \"" + fbd.SelectedPath + "\" /sdcard/Android/data/";
+                    psi.UseShellExecute = false;
+                    psi.RedirectStandardInput = true;
+                    Process p = Process.Start(psi);
+                    txtLogBox.Clear();
+                    txtLogBox.Text = "Backup restored to /sdcard/Android/data/";
+                    MessageBox.Show("Save data restored");
+                    p.Close();
+                }
             }
         }
     }
