@@ -140,7 +140,7 @@
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(85, 17);
             this.versionLabel.TabIndex = 7;
-            this.versionLabel.Text = "V.0.0.8 beta";
+            this.versionLabel.Text = "V.0.0.9 beta";
             // 
             // imagenOculus
             // 
